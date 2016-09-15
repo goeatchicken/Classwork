@@ -5,6 +5,7 @@ public class ProceduralExample {
     System.out.println("Hello, world");
     //class.field.method
     String[]names={"Jillian","Joseph","Jordan"};
-    System.out.println("Hi, my name is " + names[0] + ".");
+    String[]years={"freshmen","sophomore","senior","junior"};
+    System.out.println("Hi, my name is " + names[0] + "and I am a " + years[0] + ".");
   }
 }
