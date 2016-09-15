@@ -6,6 +6,6 @@ public class ProceduralExample {
     //class.field.method
     String[]names={"Jillian","Joseph","Jordan"};
     String[]years={"freshmen","sophomore","senior","junior"};
-    System.out.println("Hi, my name is " + names[0] + "and I am a " + years[0] + ".");
+    System.out.println("Hi, my name is " + names[0] + " and I am a " + years[0] + ".");
   }
 }
