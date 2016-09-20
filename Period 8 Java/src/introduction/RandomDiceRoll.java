@@ -14,7 +14,7 @@ public class RandomDiceRoll {
 		for(int i = 0; 1 < 6; i++){
 			System.out.println((i+1)+"appeared" + results[i]+" times");
 		}
-/*		for(int index = 0; index < 10; index++){
+		/*for(int index = 0; index < 10; index++){
 			//declare variable, logic test, increment
 			System.out.println("roll number " + (index + 1) + ": " + rollFairDice());
 		}
