@@ -13,9 +13,22 @@ public class DataTypes {
 		System.out.println(3.0+5/2+5*2);
 		//not double at "5/2" but double "3.0, thus making it 15.0\
 		System.out.println((int)(3.0 + 5)/(2 + 5 * 2));
-		//answer is 8.0/12, but because it is .666-- and (int) it removes all after point
+		//answer is 8/12, but because it is .666-- and (int) it removes all after point
 		//making it 0
 		if(42 == 42.0) System.out.println("42 equals 42.0");
+		
+		double d1 = 4.64; 
+		double d2 = 2.0;
+		double d3 = 2.64;
+
+		System.out.println("d1 : " + d1); 
+		System.out.println("d2 : " + d2); 
+		System.out.println("d3 : " + d3);  
+		System.out.println("d1 - d2 : " + (d1 - d2));		
+		
+		String s = "Happy "+18+"th birthday!";
+		System.out.println(s);
+		
 	}
 
 }
