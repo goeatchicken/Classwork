@@ -25,9 +25,14 @@ public class DataTypes {
 		System.out.println("d2 : " + d2); 
 		System.out.println("d3 : " + d3);  
 		System.out.println("d1 - d2 : " + (d1 - d2));		
+
+		String ten = "10";
+		String two = "2";
+		if(ten.compareTo(two)>0) System.out.println("10 is greater than two");
+		else System.out.print("10 is not greater than two");
+		//the "10" becomes a "1 0" which is letters, not a single number 
+		//thus "10" comes first instead of "2" because '2 > 1'
 		
-		String s = "Happy "+18+"th birthday!";
-		System.out.println(s);
 		
 	}
 
