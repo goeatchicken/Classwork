@@ -4,15 +4,17 @@ public class RandomDiceRoll {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		int totalRolls= 10000;
 		int[] results = new int[6];
-		for(int index = 0; index < 10; index++){
-			int result = rollUnfairDice();
+		for(int index = 0; index < totalRolls; index++){
+			int result = rollFairDice();
 			//change this to rollFairDice to use fair dice
 			System.out.println("Roll #" + (index+1) + ": " + result);
 			results[result-1]++;
 		}
 		for(int i = 0; 1 < 6; i++){
-			System.out.println((i+1)+"appeared" + results[i]+" times");
+			double precentage= ((int) (1000*(double) results[i]/totalRolls))/10.0;
+			System.out.println((i+1)+" appeared " + precentage +"%");
 		}
 		/*for(int index = 0; index < 10; index++){
 			//declare variable, logic test, increment
