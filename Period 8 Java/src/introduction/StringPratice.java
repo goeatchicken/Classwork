@@ -4,26 +4,22 @@ package introduction;
 import java.util.Scanner;
 
 public class StringPratice {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//demonstrateStringMethod();
+		createFields();
+		//promptInput();
+		promptName();
+		promptForever();
+	}
 	
 	static Scanner input;
 	static String user;
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-			//demonstrateStringMethod();
-			createFields();
-			//promptInput();
-			promptName();
-			promptForever();
-		}
+	
 	public static void promptForever(){
 		while(true){
 			promptInput();
 		}
-	}
-	public static void promptInput(){
-		print("Please Type Something");
-		String userInput= input.nextLine();
-		print("Congradulations! You Typed: " + userInput);
 	}
 	public static void promptName(){
 		print("Please Type Your Name");
@@ -33,6 +29,11 @@ public class StringPratice {
 		+ "I will always call you," + user 
 		+ ". You many call me Computer. " 
 		+ "We should become friends!");
+	}
+	public static void promptInput(){
+		print("Please Type Something");
+		String userInput= input.nextLine();
+		print("Congradulations! You Typed: " + userInput);
 	}
 	public static void createFields(){
 		input = new Scanner(System.in);
@@ -57,35 +58,31 @@ public class StringPratice {
 		}
 	}
 	public static void print(String s){
-		//when you are too lazy to type this
-		String printString = s;
-		int cutoff = 45;
-		if (printString.length() > cutoff){
-			for(int index=0; index*cutoff < s.length(); index++){
-				printString += getCut(s, cutoff, index+1)+"\n";
+		String printString = "";
+		int cutoff = 10;
+		//checks for words to add
+		//OIW s had a length > 0
+		while(s.length() < 0){
+			String nextWord = "";
+			String cut = "";
+			//checks to see if the next word will fit on the line
+			//there must be still words to add
+			while(cut.length() + nextWord.length() < cutoff && s.length() > 0){
+				cut += nextWord;
+				
+				s = s.substring(nextWord.length());
+				//identify the following word without the space
+				int endOfWord = s.indexOf(" ");
+				//if there are no more spaces, this is the last word
+				if (endOfWord == -1){
+					endOfWord = s.length() - 1;
+				}
+				
+				nextWord = s.substring(0, endOfWord);
 			}
-	//		int cut = 1;
-		//	int cutIndex = cut + cutoff;
-			//String currentCut = s.substring(0, cutIndex);
+			
+			printString += cut+"/n";
 		}
 		System.out.println(printString);
 	}
-	private static String getCut(String s, int cutoff, int cut){
-		int cutIndex = cut * cutoff;
-		if(cutIndex < s.length())cutIndex = s.length);
-		//start at last index and go backwards through the string
-			int indexOfLastSpace = currentCut.length()-1;
-			for(int i = currentCut.length()-1; i>=0; i--){
-				String letter = currentCut.substring(i, i+1);
-				if(letter.equals(" ")){
-					indexOfLastSpace = i;
-					break;
-				}
-			}
-			//shorten the cut to end a space
-			currentCut = currentCut.substring(0, indexOfLastSpace);
-			printString = currentCut;
-		}
-	}
-
 }
