@@ -1,0 +1,6 @@
+package chatbot;
+
+public interface ChatBot {
+	
+	public void talk();
+}
