@@ -1,0 +1,24 @@
+package chatbot;
+
+public class RichardSchool implements ChatBot{
+
+	private boolean inSchoolLoop; 
+	private String schoolResponse;
+	
+	public void talk() {
+		inSchoolLoop = true;
+		//static call on promptInput method from RichardMain class
+		while(inSchoolLoop){
+			RichardMain.print("(Type 'quit' to go back)");
+			schoolResponse = RichardMain.promptInput();
+			if(schoolResponse.indexOf("quit") >= 0){
+				inSchoolLoop = false;
+				RichardMain.promptForever();
+			}
+			RichardMain.print("That's my favorate part about school!");
+		}
+	}
+
+		
+		
+}
