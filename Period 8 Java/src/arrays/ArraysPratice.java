@@ -34,14 +34,27 @@ public class ArraysPratice {
 		 * 			- automatically assigns a "handle"
 		 */
 		for(boolean b : boos1){
-			System.out.print(b);
+			System.out.println(b);
 		}
 		//OBJECT ARRAYS
 		String[] someString1 = new String[3];
+//		someString1[0]="a";
+//		someString1[1]="b";
+//		someString1[2]="c";
+		//bit is repetitive
 		String[] someString2 = {"a", "b", "c"};
-	
+		
+	//	does not work cuz it does nothing
+//		for(String s : someString1){
+//		s = "a new String";
+//		}
+		
+	//	this one works
+		for(int i = 0; i < someString1.length; i++){
+			someString1[i] = "a new String";
+		}
 		for(String s : someString1){
-			System.out.print(someString1);
+			System.out.println(s);
 		}
 	}
 
