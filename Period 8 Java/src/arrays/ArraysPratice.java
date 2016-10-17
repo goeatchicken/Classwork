@@ -1,10 +1,9 @@
 package arrays;
 
 public class ArraysPratice {
-
-	static boolean [] boos3;
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+	public static void initializingArraysExample(){
+		
 		//Arrays: fixed length, indicates start at zero, indexed(ordered), common data type
 		// arrays if any type must be Object[]
 		//if you want to put different primitive types into an array, you must use their wrapper 
@@ -19,6 +18,7 @@ public class ArraysPratice {
 		//this does not work:
 		//boos3 = {false, true, false};
 		//this works:
+		boolean [] boos3;
 		boos3 = new boolean[3];
 		
 		//two ways of iterating through an Array
@@ -59,8 +59,36 @@ public class ArraysPratice {
 		for(String s : someString1){
 			System.out.println(s);
 		}
+	}
 		
+	public static void main(String[] args) {
+		//how do you time a process?
+		long currentTime = System.currentTimeMillis();
 		
+		String[] someString = new String[1000];
+		standardPopulate(someString);
+		String s = someString[999];
+		makeSpecial(s);
+		print(someString);
+	//	initializingArraysExample();
+		long endTime = System.currentTimeMillis();
+		System.out.println("The process took " + (endTime - currentTime) + " ms.");
+		}
+	private static void makeSpecial(String s) {
+		// TODO Auto-generated method stub
+		s = "THIS STRING IS SPECIAL!";
 	}
 
+	private static void print(String[] s) {
+		// TODO Auto-generated method stub
+		for(int i = 0; i < s.length; i++){
+			System.out.println(s[i]);
+		}
+	}
+
+	private static void standardPopulate(String[] s){
+		for(int i = 0; i < s.length; i++){
+			s[i] = "String #" +  (i + 1);
+		}
+	}
 }
