@@ -10,6 +10,9 @@ public class ArraysPratice {
 		//if you want to put different primitive types into an array, you must use their wrapper 
 		//class(classes that represent the primitive types)
 		
+		//primitive arrays are "already" in the system and connect mix types
+		//object arrays (unless initialized) starts at null and different types of objects in an array of common superclass
+		
 		boolean [] boos1 = new boolean [3];
 		//this can ONLY be done at the declaration because it sets size AND content
 		boolean [] boos2 = {false, false, false};
@@ -56,6 +59,8 @@ public class ArraysPratice {
 		for(String s : someString1){
 			System.out.println(s);
 		}
+		
+		
 	}
 
 }
