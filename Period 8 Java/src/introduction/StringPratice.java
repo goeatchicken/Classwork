@@ -91,4 +91,5 @@ public class StringPratice {
 		}
 		System.out.println(printString);
 	}
+
 }

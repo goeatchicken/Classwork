@@ -29,8 +29,5 @@ public class RichardSchool implements ChatBot{
 			return true;
 		}
 		return false;
-	}
-
-		
-		
+	}		
 }
