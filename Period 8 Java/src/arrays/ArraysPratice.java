@@ -69,11 +69,15 @@ public class ArraysPratice {
 		standardPopulate(someString);
 		String s = someString[999];
 		makeSpecial(s);
+		someString[999] = getASpecialString();
 		print(someString);
 	//	initializingArraysExample();
 		long endTime = System.currentTimeMillis();
 		System.out.println("The process took " + (endTime - currentTime) + " ms.");
 		}
+	private static String getASpecialString(){
+		return "THIS STRING IS SPECIAL!";
+	}
 	private static void makeSpecial(String s) {
 		// TODO Auto-generated method stub
 		s = "THIS STRING IS SPECIAL!";
