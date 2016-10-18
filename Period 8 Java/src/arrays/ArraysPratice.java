@@ -2,6 +2,56 @@ package arrays;
 
 public class ArraysPratice {
 	
+	public static void main(String[] args) {
+		//	demostratePassByValue();
+		int[] fiftyNumbers = new int[50];
+		populate(fiftyNumbers);
+	//	print(fiftyNumbers);
+	//	randomize(fiftyNumbers, 50);
+	//	print(fiftyNumbers);
+		rollDice(fiftyNumbers, 3);
+		print(fiftyNumbers);
+		countResult(fiftyNumbers, 3);
+	}
+	public static void rollDice(int[]x, int numberOfDice){
+//		for(int i = 0; i<x.length; i++){
+//			int rand1 = (int) (1+(Math.random()*6));
+//			int rand2 = (int) (1+(Math.random()*6));
+//			x[i] = rand1 + rand2;
+//		}
+		for(int i = 0; i< x.length; i++){
+			int dice = 0;
+			for(int j = 0; j< numberOfDice; j++){
+				dice = dice + (int) (1 + 6*Math.random());
+			}
+			x[i]=dice;
+		}
+	}
+	public static void countResult(int[]x, int numberOfDice){
+		int[] counter = new int[numberOfDice*6];
+		for(int n : x){
+			counter[n-1] = counter[n-1] + 1;
+		}
+		for(int i = numberOfDice-1; i < counter.length; i++){
+			System.out.println((i+1) + " was rolled " + 100*counter[i]/x.length + " percent of the time");
+		}
+	}
+	private static void populate(int[] s){
+		for(int i = 0; i < s.length; i++){
+			s[i] = i + 1;
+		}
+	}
+	public static void randomize(int [] num, int max){
+		for(int i = 0; i<num.length; i++){
+			int rand = (int) (1+(Math.random()*max));
+			num[i] = rand;
+		}
+	}
+	public static void print(int [] x){
+		for(int i = 0; i < x.length; i++){
+			System.out.println(x[i]);
+		}
+	}
 	public static void initializingArraysExample(){
 		
 		//Arrays: fixed length, indicates start at zero, indexed(ordered), common data type
@@ -61,8 +111,8 @@ public class ArraysPratice {
 		}
 	}
 		
-	public static void main(String[] args) {
-		//how do you time a process?
+	private static void demostratePassByValue(){
+				//how do you time a process?
 		long currentTime = System.currentTimeMillis();
 		
 		String[] someString = new String[1000];
@@ -74,7 +124,7 @@ public class ArraysPratice {
 	//	initializingArraysExample();
 		long endTime = System.currentTimeMillis();
 		System.out.println("The process took " + (endTime - currentTime) + " ms.");
-		}
+	}
 	private static String getASpecialString(){
 		return "THIS STRING IS SPECIAL!";
 	}
