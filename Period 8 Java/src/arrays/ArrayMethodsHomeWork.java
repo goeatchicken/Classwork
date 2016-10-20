@@ -8,10 +8,10 @@ public class ArrayMethodsHomeWork {
 		// TODO Auto-generated method stub
 		int[] test = {6, 1, 3, 5, 2};
 		int[] test2 = {7, 5, 3, 1};
-		//System.out.println(searchUnsorted(test, 7));
-		System.out.println(searchSorted(test, 0));
+		System.out.println(searchUnsorted(test, -1));
+		System.out.println(searchSorted(test, 8));
 		//sortDescending(test);
-		//System.out.println(isSorted(test));
+		System.out.println(isSorted(test));
 	}
 	
 	public static int searchUnsorted(int[] arrayToSearch, int key){
