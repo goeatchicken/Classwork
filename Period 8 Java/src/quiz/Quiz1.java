@@ -31,6 +31,7 @@ public class Quiz1 {
 		int triesRemaining = 3;
 		while(inLoop == true){
 			System.out.println("Enter your password");
+			//1 point use waitForEntry() correctly
 			String entry = waitForEntry();
 			if(entry.equals(password)){
 				System.out.println("You're in");
