@@ -59,4 +59,4 @@ public class Quiz1 {
 		//1 point for correct comparing Strings
 		return (waitForEntry().equals(username));
 	}
-}
+} 
