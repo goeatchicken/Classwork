@@ -6,9 +6,18 @@ public class AdvancedArrayMethod {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		array = new int [100];
-		int[] someArray = new int [50];
-		methodA(someArray);
+		//array = new int [100];
+		//int[] someArray = new int [50];
+		//methodA(someArray);
+		String[] array = {"a", "b", "c", "d", "e", "f"};
+		shuffle(array);
+	}
+	private static void shuffle(String[] array) {
+		// TODO Auto-generated method stub
+		for(int i = 0; i < array.length; i++){
+			int random = (int) (Math.random()*6);
+			swap(array, i, random);
+		}
 	}
 	private static void swap(String[]arry, int i, int j){
 		//make place holder and put the information in the placeholder
