@@ -8,10 +8,12 @@ public class ArrayMethodsHomeWork {
 		// TODO Auto-generated method stub
 		int[] test = {6, 1, 3, 5, 2};
 		int[] test2 = {7, 5, 3, 1};
-		System.out.println(searchUnsorted(test, -1));
-		System.out.println(searchSorted(test, 8));
+		double[] test3 = {1.0, 2.0, 3.0, 4.0};
+		//System.out.println(searchUnsorted(test, -1));
+		//System.out.println(searchSorted(test, 8));
 		//sortDescending(test);
-		System.out.println(isSorted(test));
+		//System.out.println(isSorted(test));
+		System.out.println(Arrays.toString(getStats(test3)));
 	}
 	
 	public static int searchUnsorted(int[] arrayToSearch, int key){
@@ -89,6 +91,90 @@ public class ArrayMethodsHomeWork {
 			}
     		else{
    	//			System.out.println("no " + array[i] + "<" + array[j]);
+   				inSortCheck = false;
+   			}
+   		}
+    return yaOrNah;
+    }
+    public static double[] getStats(double[] array){
+    	double start = 0.0;
+    	double currentMax = array[0];
+    	double currentMin = array[0];
+    	double median = 0.0;
+    	double[]stats = new double[6];
+    	//mean
+    	for(int i = 0; i<array.length; i++){
+    		//mean
+    		start += array[i];
+    		//max
+    		if(currentMax < array[i]){
+    			currentMax = array[i];
+    		}
+    		//min
+    		if(currentMin > array[i]){
+    			currentMin = array[i];
+    		}
+    		//median
+    		if(array.length%2 == 0){
+    			median = (sortDescending2(array)[(array.length/2)+1] + sortDescending2(array)[(array.length/2)+1])/2;
+    		}
+    		if(array.length%2 == 1){
+    			median = sortDescending2(array)[((array.length-1)/2)+1];
+    		}
+    	}
+    	stats[0] = start / array.length;
+    	stats[1] = currentMax;
+    	stats[2] = currentMin;
+    	stats[3] = median;
+    	return stats;
+    }
+    public static double[] sortDescending2(double[] list){
+		boolean inSortDescendingLoop = true;
+		int i = 0;
+		int j = 1;
+		int loopCounter = 0;
+		while(inSortDescendingLoop == true){
+			if(loopCounter == list.length -1){
+				i = 0;
+				j = 1;
+				loopCounter = 0;
+			}
+			double num1 = list[i];
+			double num2 = list[j];
+			if(isSorted2(list) == true){
+				break;
+			}
+			else{
+				if(list [i] < list [j]){
+					list[i] = num2;
+					list[j] = num1;
+				}
+				if(list [i] >= list [j]){
+					i++;
+					j++;
+					loopCounter++;
+				}
+			}
+		}
+		return list;
+	}
+    public static boolean isSorted2(double[] array){
+    	boolean inSortCheck = true;
+    	boolean yaOrNah = false;
+    	int i = 0;
+    	int j = 1;
+    	int loopCounter = 0;
+    	while(inSortCheck == true){
+    		if(array[i] >= array[j]){
+				i++;
+				j++;
+   				loopCounter++;
+   				if(loopCounter == array.length - 1){
+   					yaOrNah = true;
+    				inSortCheck = false;
+    			}
+			}
+    		else{
    				inSortCheck = false;
    			}
    		}

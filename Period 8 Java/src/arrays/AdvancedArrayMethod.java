@@ -40,4 +40,27 @@ public class AdvancedArrayMethod {
 			System.out.println("ERROR: tried to copy arrays of two different lengths");
 		}
 	}
+	public static int longestConsecutiveSequence(int[] array1, int []array2){
+		int max = 0;
+		int count = 0;
+		
+		for(int seqStart = 0; seqStart < array1.length; seqStart++){
+			int seqEnd = seqStart;
+			int [] seq = getSequence(seqStart,seqEnd,array1);
+			if(checkSequence(seq, array2)){
+				count++;
+				if(count >max){
+					max = count;
+				}
+			}
+		}
+		return max;
+	}
+	private static boolean checkSequence(int[] seq, int[] array2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	private static int[] getSequence(int seqStart, int seqEnd, int[] array1){
+		return null;
+	}
 }
