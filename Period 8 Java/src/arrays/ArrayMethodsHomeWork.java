@@ -6,30 +6,50 @@ public class ArrayMethodsHomeWork {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int[] test = {6, 1, 3, 5, 2};
+		int[] test = {6, 1, 3, 5, 2 , 62, 11, 34, 56, 22, 63, 1, 33, 556, 21};
 		int[] test2 = {7, 5, 3, 1};
+		int[] test5 = {3, 1, 6, 5, 1, 5, 0};
 		double[] test3 = {1.0, 2.0, 3.0, 4.0};
+		double[] test4 = {6.0, 1.0, 3.0, 5.0, 2.0 , 62.0, 11.0, 34.0, 56.0, 22.0, 63.0, 1.0, 33.0, 556.0, 21.0};
 		//System.out.println(searchUnsorted(test, -1));
-		//System.out.println(searchSorted(test, 8));
+		//System.out.println(searchSorted(test, 2));
 		//sortDescending(test);
 		//System.out.println(isSorted(test));
-		System.out.println(Arrays.toString(getStats(test3)));
+		//System.out.println(Arrays.toString(getStats(test4)));
+		System.out.println(countDifferences(test5, test));
 	}
 	
 	public static int searchUnsorted(int[] arrayToSearch, int key){
-		if(arrayToSearch.length > key-1){
-			return arrayToSearch[key-1];
-			}
-		return -1;
+        int k = 0;
+        for(int i=0; i<arrayToSearch.length; i++){
+            if(arrayToSearch[i] == key){
+                k = i;
+            }
+        }
+        if(arrayToSearch[k] == key){
+            return k;
+        }
+        else{
+            return -1;
+        }
 	}
 	public static int searchSorted(int[] sortedArrayToSearch, int key){
-		if(sortedArrayToSearch.length > key - 1){
-			int[] sortedArray = new int[sortedArrayToSearch.length];
-			sortedArray = sortDescending(sortedArrayToSearch);
-			return sortedArray[key];
+		int[] sortedArray = new int[sortedArrayToSearch.length];
+		sortedArray = sortDescending(sortedArrayToSearch);
+		System.out.println(Arrays.toString(sortedArray));
+		int k = 0;
+		for(int i = 0; i < sortedArray.length; i++){
+		    if(sortedArray[i] == key){
+		        k = i;
+		    }
 		}
-	     return -1;
+		if(sortedArray[k] == key){
+		    return k;
+		}
+	    else{
+		    return -1;
 	    }
+	}	
 	public static int[] sortDescending(int[] list){
 		boolean inSortDescendingLoop = true;
 		int i = 0;
@@ -102,9 +122,13 @@ public class ArrayMethodsHomeWork {
     	double currentMin = array[0];
     	double median = 0.0;
     	double[]stats = new double[6];
+    	double greaterCount = 0.0;
+    	double lessCount = 0.0;
+    	double organizedList [] = sortDescending2(array);
     	//mean
     	for(int i = 0; i<array.length; i++){
     		//mean
+    		//System.out.println("ADDING: " + array[i] + " TO " + start +". i IS " + i);
     		start += array[i];
     		//max
     		if(currentMax < array[i]){
@@ -115,17 +139,28 @@ public class ArrayMethodsHomeWork {
     			currentMin = array[i];
     		}
     		//median
-    		if(array.length%2 == 0){
-    			median = (sortDescending2(array)[(array.length/2)+1] + sortDescending2(array)[(array.length/2)+1])/2;
-    		}
-    		if(array.length%2 == 1){
-    			median = sortDescending2(array)[((array.length-1)/2)+1];
-    		}
+    	}
+    	if(array.length%2 == 0){
+    		median = (organizedList[(array.length/2)-1] + organizedList[(array.length/2)])/2;
+    	}
+    	if(array.length%2 == 1){
+    		median = organizedList[((array.length+1)/2)-1];
+    	}
+    	//greater and less
+    	for(int i=0;i<array.length;i++){
+    	    if(array[i]>=median){
+    	        greaterCount++;
+    	    }
+    	    if(array[i]<median){
+    	        lessCount++;
+    	    }
     	}
     	stats[0] = start / array.length;
     	stats[1] = currentMax;
     	stats[2] = currentMin;
     	stats[3] = median;
+    	stats[4] = greaterCount;
+    	stats[5] = lessCount;
     	return stats;
     }
     public static double[] sortDescending2(double[] list){
@@ -179,6 +214,49 @@ public class ArrayMethodsHomeWork {
    			}
    		}
     return yaOrNah;
+    }
+    public static int countDifferences(int[] array1, int[] array2){
+    	boolean [] a = new boolean[array1.length];
+    	boolean [] b = new boolean[array2.length];
+    	int[] usedNum = new int [0];
+    	int differentCount = 0;
+    	if(array1.length <= array2.length){
+    		for(int i = 0; i<array1.length; i++){
+        		for(int j = 0; j<array2.length; j++){
+        			if(b[j] == true){
+    					
+    				}
+        			if(array1[i] == array2[j]){
+        				a[i] = true;
+        				b[j] = true;
+        			}
+        		}
+        	}
+    	}
+    	else{
+    		for(int i = 0; i<array2.length; i++){
+    			for(int j = 0; j<array1.length; j++){
+    				if(b[i] == true){
+    					
+    				}
+    				else if(array2[i] == array1[j]){
+    					a[j] = true;
+    					b[i] = true;
+    				}
+    			}
+    		}
+    	}
+    	for(int i = 0; i < a.length;i++){
+    		if(a[i] == false){
+    			differentCount++;
+    		}
+    	}
+    	for(int i = 0; i < b.length;i++){
+    		if(b[i] == false){
+    			differentCount++;
+    		}
+    	}
+        return differentCount;
     }
 }
 
