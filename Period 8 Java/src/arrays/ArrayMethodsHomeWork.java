@@ -9,6 +9,7 @@ public class ArrayMethodsHomeWork {
 		int[] test = {6, 1, 3, 5, 2 , 62, 11, 34, 56, 22, 63, 1, 33, 556, 21};
 		int[] test2 = {7, 5, 3, 1};
 		int[] test5 = {3, 1, 6, 5, 1, 5, 0};
+		int[] test6 = {1, 2, 3, 4, 5, 8};
 		double[] test3 = {1.0, 2.0, 3.0, 4.0};
 		double[] test4 = {6.0, 1.0, 3.0, 5.0, 2.0 , 62.0, 11.0, 34.0, 56.0, 22.0, 63.0, 1.0, 33.0, 556.0, 21.0};
 		//System.out.println(searchUnsorted(test, -1));
@@ -16,7 +17,9 @@ public class ArrayMethodsHomeWork {
 		//sortDescending(test);
 		//System.out.println(isSorted(test));
 		//System.out.println(Arrays.toString(getStats(test4)));
-		System.out.println(countDifferences(test5, test));
+		//System.out.println(countDifferences(test5, test));
+//		System.out.println(longestConsecutiveSequence(test6));
+		System.out.println(generateDistinctItemsList(7));
 	}
 	
 	public static int searchUnsorted(int[] arrayToSearch, int key){
@@ -258,5 +261,46 @@ public class ArrayMethodsHomeWork {
     	}
         return differentCount;
     }
+//    public static int longestConsecutiveSequence(int[] array1){
+//    	int count = 1;
+//    	for(int h = 0; h<array1.length;h++){
+//      a: 	for(int i = 0; i < array1.length-1;i++){
+//        		for(int j = i+1; j<array1.length;j++){
+//        			if(array1[i] + 1 == array1[j]){
+//        				count++;
+//        			}
+//        			else{
+//        				break a;
+//        			}
+//        		}
+//      		}
+//    	}
+//        return count;
+//    }
+    public static int[] generateDistinctItemsList(int n){
+    	int [] list = new int [n];
+    	int [] list2 = new int [(2*n) - n + 1];
+    	int count = n;
+    	for(int h = 0; h<= n; h++){
+    			list2[h] = count;
+    			count++;
+    		}
+    	shuffle(list2);
+    	for(int i = 0; i<n; i++){
+    		list[i] = list2[i];
+    	}
+        return list; 
+    }
+    private static void shuffle(int[] array) {
+		for(int i = 0; i < array.length; i++){
+			int random = (int) (Math.random()*6);
+			swap(array, i, random);
+		}
+	}
+	private static void swap(int[]arry, int i, int j){
+		int placeholder = arry[j];
+		arry[j] = arry[i];
+		arry[i] = placeholder;
+	}
 }
 
