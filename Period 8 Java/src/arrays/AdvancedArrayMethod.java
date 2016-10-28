@@ -57,7 +57,18 @@ public class AdvancedArrayMethod {
 		return max;
 	}
 	private static boolean checkSequence(int[] seq, int[] array2) {
-		// TODO Auto-generated method stub
+		//i checks every value in array2
+		A: for(int i = 0; i<array2.length; i++){
+			//j checks every element in seq
+			B: for(int j = 0; j < seq.length; j++){
+				if(seq[j] != array[j+1]){
+					break;
+				}
+				else if(j == seq.length-1){
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 	private static int[] getSequence(int seqStart, int seqEnd, int[] array1){

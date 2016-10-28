@@ -8,7 +8,7 @@ public class ArrayMethodsHomeWork {
 		// TODO Auto-generated method stub
 		int[] test = {6, 1, 3, 5, 2};
 		int[] test2 = {7, 5, 3, 1};
-		double[] test3 = {1.0, 2.0, 3.0, 4.0};
+		double[] test3 = {1.0, 2.0, 3.0, 4.0, 5.0, 9.0, 86.3, 5.3};
 		//System.out.println(searchUnsorted(test, -1));
 		//System.out.println(searchSorted(test, 8));
 		//sortDescending(test);
@@ -97,14 +97,28 @@ public class ArrayMethodsHomeWork {
     return yaOrNah;
     }
     public static double[] getStats(double[] array){
-    	double start = 0.0;
+        /** 
+         * This method return a double[] contain a WHOLE BUNCH of stats
+         * The double array must keep the following stats about the array parameter:
+         * index 0 = the mean
+         * index 1 = the max
+         * index 2 = the min
+         * index 3 = the median
+         * index 4 = the number of values greater than or equal to the mean
+         * index 5 = the number of values below the mean
+          **/
+        double start = 0.0;
     	double currentMax = array[0];
     	double currentMin = array[0];
     	double median = 0.0;
     	double[]stats = new double[6];
+    	double greaterCount = 0.0;
+    	double lessCount = 0.0;
+    	double organizedList [] = sortDescending2(array);
     	//mean
     	for(int i = 0; i<array.length; i++){
     		//mean
+    		//System.out.println("ADDING: " + array[i] + " TO " + start +". i IS " + i);
     		start += array[i];
     		//max
     		if(currentMax < array[i]){
@@ -115,17 +129,29 @@ public class ArrayMethodsHomeWork {
     			currentMin = array[i];
     		}
     		//median
-    		if(array.length%2 == 0){
-    			median = (sortDescending2(array)[(array.length/2)+1] + sortDescending2(array)[(array.length/2)+1])/2;
-    		}
-    		if(array.length%2 == 1){
-    			median = sortDescending2(array)[((array.length-1)/2)+1];
-    		}
     	}
+    	if(array.length%2 == 0){
+    		median = (organizedList[(array.length/2)-1] + organizedList[(array.length/2)])/2;
+    	}
+    	if(array.length%2 == 1){
+    		median = organizedList[((array.length+1)/2)-1];
+    	}
+    	//greater and less
+    	for(int i=0;i<array.length;i++){
+    	    if(array[i]>=median){
+    	        greaterCount++;
+    	    }
+    	    if(array[i]<median){
+    	        lessCount++;
+    	    }
+    	}
+    	System.out.println(start);
     	stats[0] = start / array.length;
     	stats[1] = currentMax;
     	stats[2] = currentMin;
     	stats[3] = median;
+    	stats[4] = greaterCount;
+    	stats[5] = lessCount;
     	return stats;
     }
     public static double[] sortDescending2(double[] list){

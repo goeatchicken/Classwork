@@ -4,14 +4,39 @@ public class ArraysPratice {
 	
 	public static void main(String[] args) {
 		//	demostratePassByValue();
-		int[] fiftyNumbers = new int[50];
-		populate(fiftyNumbers);
+	//	int[] fiftyNumbers = new int[50];
+	//	populate(fiftyNumbers);
 	//	print(fiftyNumbers);
 	//	randomize(fiftyNumbers, 50);
 	//	print(fiftyNumbers);
-		rollDice(fiftyNumbers, 3);
-		print(fiftyNumbers);
-		countResult(fiftyNumbers, 3);
+	//	rollDice(fiftyNumbers, 3);
+	//	print(fiftyNumbers);
+	//	countResult(fiftyNumbers, 3);
+		listPrime(100);
+	}
+	private static void listPrime(int limit) {
+		// TODO Auto-generated method stub
+		int lastToCheck = (int) (Math.sqrt(limit));
+		boolean[]numbers =new boolean [limit + 1];
+		for(int i = 0; i<limit+1; i++){
+			numbers[i]=true;
+		}
+		//0 and 1 are not prime
+		numbers[0] = false;
+		numbers[1] = false;
+		for(int prime = 2; prime <= lastToCheck; prime++){
+			if(numbers[prime]){
+				System.out.println("\n" + prime + " is prime. Crossing off: ");
+				for(int i = (int) (Math.pow(prime, 2)); i < limit +1; i+= prime){
+					System.out.print(i + ", ");
+					numbers[i] = false;
+				}
+			}
+		}
+		System.out.println("\nThe primes are: ");
+		for(int index = 0; index < numbers.length; index++){
+			if(numbers[index])System.out.print(index + ", ");
+		}
 	}
 	public static void rollDice(int[]x, int numberOfDice){
 //		for(int i = 0; i<x.length; i++){
