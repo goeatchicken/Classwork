@@ -20,10 +20,30 @@ public class CaveExplorer {
 		}
 		currentRoom = caves[1][2];
 		currentRoom.enter();
-		caves[1][2].setConnection(caves[1][1]);
-		caves[1][2].setConnection(caves[2][2]);
-		caves[1][2].setConnection(caves[1][3]);
-		
+		caves[1][2].setConnection(CaveRoomPd8.WEST, caves[1][1], new Door());
+		caves[1][2].setConnection(CaveRoomPd8.SOUTH, caves[2][2], new Door());
+		caves[1][2].setConnection(CaveRoomPd8.EAST, caves[1][3], new Door());
+		inventory = new InventoryNockles();
+		startExploring();
+	}
+
+	private static void startExploring() {
+		// TODO Auto-generated method stub
+		while(true){
+			print(InventoryNockles.getDescription());
+			print(currentRoom.getDescription());
+			print("What dould you like to do?");
+			String input = in.nextLine();
+			act(input);
+		}
+	}
+	private static void act(String input) {
+		// TODO Auto-generated method stub
+		currentRoom.interpretAction(input);
+	}
+
+	public static void print(String item){
+		System.out.println(item);
 	}
 }
 

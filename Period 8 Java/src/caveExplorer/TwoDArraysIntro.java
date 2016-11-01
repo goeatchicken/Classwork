@@ -6,6 +6,32 @@ public class TwoDArraysIntro {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		String[][] pic = new String[10][8];
+		for(int row = 0; row < pic.length; row++){
+			for(int col = 0; col < pic[row].length; col++){
+				pic[row][col] = "";
+			}
+		}
+		//grassy fields
+		for(int row = 5; row < pic.length; row++){
+			for(int col = 0; col < pic[row].length; col++){
+				pic[row][col] = "w";
+			}
+		}
+		//sun
+		pic[0][3] = "|";
+		pic[1][3] = "O";
+		pic[2][3] = "|";
+		pic[1][2] = "--";
+		pic[1][4] = "--";
+		for(String[] row : pic){
+			for(String col : row){
+				System.out.print(col);
+			}
+			System.out.println();
+		}
+	}
+	public static void intro(){
 		String[] xox = {"x", "o", "x", "o", "x"};
 		System.out.println(Arrays.toString(xox));
 		//a 1D array prints a horizontal string
@@ -25,5 +51,4 @@ public class TwoDArraysIntro {
 			System.out.println(Arrays.toString(row));
 		}
 	}
-
 }
