@@ -15,21 +15,22 @@ public class TwoDArraysIntro {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		arr2D = new String [5][5];
-		pic = new String [5][5];
-		for(int row = 0; row < arr2D.length;row++){
-			//populate with coordinates
-			for(int col = 0; col<arr2D[row].length; col++){
-				arr2D[row][col] = "(" + row + "," + col + ")";
-			}
-		}
-		starti = 2;
-		startj = 2;
-		treasurei = 4;
-		treasurej = 3;
-		startExploring();
+//		arr2D = new String [5][5];
+//		pic = new String [5][5];
+//		for(int row = 0; row < arr2D.length;row++){
+//			//populate with coordinates
+//			for(int col = 0; col<arr2D[row].length; col++){
+//				arr2D[row][col] = "(" + row + "," + col + ")";
+//			}
+//		}
+//		starti = 2;
+//		startj = 2;
+//		treasurei = 4;
+//		treasurej = 3;
+//		//startExploring();
+		gridHW();
 	}
-	private static void startExploring() {
+	private static void startExploring(){
 		// TODO Auto-generated method stub
 		while(true){
 			printPic(pic);
@@ -91,20 +92,14 @@ public class TwoDArraysIntro {
 	}
 	public static void gridHW(){
 		String[][]field = new String[5][5];
-		for(int row = 0; row < field.length; row++){
-			for(int col = 0; col < field[row].length; col++){
-				field[row][col] = " ";
-			}
-		}
 		for(int col = 0; col< field[0].length; col++){
-			field[0][col] = " ___";
-			field[field.length-1][col]= "___ ";
+			field[0][col] = " __";
 		}
+		
+		//first and lost column is "|"
 		
 		for(int row = 1; row<field.length; row++){
 			field[row][0] = "|";
-			field[row][field.length-1 % 2] = "|";
-		//	field[row][field[0].length-1] = "|";
 		}
 		for(String[] row : field){
 			for(String col : row){
