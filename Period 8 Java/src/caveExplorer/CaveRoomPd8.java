@@ -18,7 +18,7 @@ public class CaveRoomPd8 {
 
 	public CaveRoomPd8(String description){
 		this.description = description;
-		setDefaultContents("   ");
+		setDefaultContents(" ");
 		contents = defaultContents;
 		
 		borderingRooms = new CaveRoomPd8[4];
@@ -47,12 +47,18 @@ public class CaveRoomPd8 {
 	
 	}
 
+	public static String toDirection(int dir) {
+		// TODO Auto-generated method stub
+		String[] string = {"the North", "the East", "the South", "the West"};
+		return string[dir];
+	}
+
 	public String getContents(){
 		return contents;
 	}
 	
 	public void enter(){
-		contents = " X ";
+		contents = "X";
 	}
 	
 	public void leave(){
@@ -110,7 +116,34 @@ public class CaveRoomPd8 {
 
 	public void interpretAction(String input) {
 		// TODO Auto-generated method stub
-		
+		while(!isValid(input.toLowerCase())){
+			CaveExplorer.print("Please enter 'w', 'a', 's', or 'd'");
+			input = CaveExplorer.in.nextLine().toLowerCase();
+		}
+		String[]key = {"w", "d", "s", "a"};
+		int indexFound = -1;
+		for(int i = 0; i<key.length; i++){
+			if(key[i].equals(input)){
+				indexFound = i;
+				break;
+			}
+		}
+		if(borderingRooms[indexFound]!=null && doors[indexFound]!=null && doors[indexFound].isOpen()){
+			CaveExplorer.currentRoom = borderingRooms[indexFound];
+			CaveExplorer.currentRoom.leave();
+			CaveExplorer.currentRoom.enter();
+			CaveExplorer.inventory.updateMap();
+			
+		}
 	}
-
+	private static boolean isValid(String input) {
+		// TODO Auto-generated method stub
+		String[] validKeys = {"w", "a", "s", "d"};
+		for(String key : validKeys){
+			if(input.toLowerCase().equals(key)){
+				return true;
+			}
+		}
+		return false;
+	}
 }

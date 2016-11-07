@@ -13,12 +13,13 @@ public class CaveExplorer {
 		// TODO Auto-generated method stub
 		in = new Scanner(System.in);
 		caves = new CaveRoomPd8 [5][5];
-		for(int row = 0; row < caves[row].length; row++){
-			for(int col = 0; col < caves[col].length; col++){
-				caves[row][col] = new CaveRoomPd8("This room has " + row + "," + "col");
+		for(int row = 0; row < caves.length; row++){
+			for(int col = 0; col < caves[row].length; col++){
+				caves[row][col] = new CaveRoomPd8("This room has " + row + "," + col);
 			}
 		}
 		currentRoom = caves[1][2];
+		caves[1][3] = new EventRoom("This is where you found the map.", new GameStartEvent());
 		currentRoom.enter();
 		caves[1][2].setConnection(CaveRoomPd8.WEST, caves[1][1], new Door());
 		caves[1][2].setConnection(CaveRoomPd8.SOUTH, caves[2][2], new Door());
