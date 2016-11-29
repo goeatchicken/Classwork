@@ -19,6 +19,7 @@ public class RecursionIntro {
 				value++;
 			}
 		});
+		hanoiSolution(2,"A","B","C");
 	}
 	public static int factorial(int x){
 		//for loop method
@@ -47,4 +48,14 @@ public class RecursionIntro {
 		}
 	}
 	
+	public static void hanoiSolution(int numberOfDiscs, String startPeg, String midPeg, String endPeg){
+		if(numberOfDiscs<-1){
+			System.out.println("Move " + startPeg + " to " + endPeg);
+		}
+		else{
+			hanoiSolution(numberOfDiscs -1 , startPeg, endPeg, midPeg);
+			hanoiSolution(1, startPeg, midPeg, endPeg);
+			hanoiSolution(numberOfDiscs -1, midPeg, startPeg, endPeg);
+		}
+	}
 }
