@@ -1,5 +1,5 @@
 package pokemanSort;
 
 public interface Attack {
-	public void attack(Pokeman target);
+	public void attack(Pokemon target);
 }
