@@ -20,7 +20,20 @@ public class RecursionIntro {
 			}
 		});
 	}
-
+	public static int factorial(int x){
+		//for loop method
+		int factorial = 1;
+		for(int i = x; i > 0; i--){
+			factorial = factorial * i;
+		}
+		System.out.println(factorial);
+		return factorial;
+		//recursive method
+//		if(x >1){
+//			return x * factorial(x-1);
+//		}
+//		return 1;
+	}
 	private static void forLoop(int i, Action action) {
 		// TODO Auto-generated method stub
 		if(i <= 0){
@@ -33,5 +46,5 @@ public class RecursionIntro {
 			forLoop(i-1,action);
 		}
 	}
-
+	
 }
