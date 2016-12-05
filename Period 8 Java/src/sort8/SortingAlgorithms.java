@@ -10,6 +10,8 @@ public class SortingAlgorithms {
 		System.out.println("- - - SELECTION SORT - - -");
 		System.out.println(Arrays.toString(arrayToSort));
 		selectionSort(copy(arrayToSort));
+		System.out.println("- - - BUBBLE SORT - - -");
+		bubbleSort(copy(arrayToSort));
 	}
 	
 	public static int[] copy(int[] arr){
@@ -43,5 +45,17 @@ public class SortingAlgorithms {
 			swap(arrayToSort, i, minIndex);
 		}
 	}
-
+	
+	public static void bubbleSort(int[] array){
+	    System.out.println("Bubble sort with "+Arrays.toString(array));
+	    for(int i=0; i < array.length-1; i++){
+	        for(int j=1; j < array.length-i; j++){
+	            if(array[j-1] > array[j]){
+	                swap(array,j-1,j);
+	                System.out.println("becomes "+Arrays.toString(array));
+	            }
+	        }
+	System.out.println("Ends as "+Arrays.toString(array));
+	    }
+	}
 }
