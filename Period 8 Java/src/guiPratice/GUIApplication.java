@@ -1,5 +1,7 @@
 package guiPratice;
 
+import java.awt.Graphics;
+
 import javax.swing.JFrame;
 
 public class GUIApplication extends JFrame {
@@ -26,5 +28,9 @@ public class GUIApplication extends JFrame {
 		// TODO Auto-generated method stub
 		Screen startScreen = new Screen(getWidth(), getHeight());
 		currentScreen = startScreen;
+	}
+	
+	public void print(Graphics g){
+		g.drawImage(currentScreen.GetImage(), 0, 0, null);
 	}
 }
