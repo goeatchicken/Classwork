@@ -20,7 +20,7 @@ public class Screen {
 	}
 	public void update() {
 		// TODO Auto-generated method stub
-		
+		//this is where you draw stuff
 	}
 	public BufferedImage GetImage(){
 		return image;
