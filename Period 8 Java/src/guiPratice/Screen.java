@@ -1,5 +1,6 @@
 package guiPratice;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 public class Screen {
@@ -21,6 +22,8 @@ public class Screen {
 	public void update() {
 		// TODO Auto-generated method stub
 		//this is where you draw stuff
+		Graphics2D g = image.createGraphics();
+		g.drawString("HELLO!", 40, 40);
 	}
 	public BufferedImage GetImage(){
 		return image;
