@@ -30,7 +30,7 @@ public class GUIApplication extends JFrame {
 		currentScreen = startScreen;
 	}
 	
-	public void print(Graphics g){
+	public void paint(Graphics g){
 		g.drawImage(currentScreen.GetImage(), 0, 0, null);
 	}
 }
