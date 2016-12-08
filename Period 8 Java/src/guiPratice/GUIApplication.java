@@ -15,6 +15,8 @@ public class GUIApplication extends JFrame {
 	
 	public GUIApplication(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//set true for removing border
+		setUndecorated(false);
 		int x = 40;
 		int y = 40;
 		int width = 600;
