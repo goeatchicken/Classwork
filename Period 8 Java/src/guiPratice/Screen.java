@@ -1,5 +1,6 @@
 package guiPratice;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
@@ -23,6 +24,7 @@ public class Screen {
 		// TODO Auto-generated method stub
 		//this is where you draw stuff
 		Graphics2D g = image.createGraphics();
+		g.setColor(Color.black);
 		g.drawString("HELLO!", 40, 40);
 	}
 	public BufferedImage GetImage(){
