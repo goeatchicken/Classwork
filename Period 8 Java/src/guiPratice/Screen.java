@@ -17,7 +17,7 @@ public class Screen {
 		this.height = height;
 		initImage();
 	}
-	private void initImage() {
+	public void initImage() {
 		// TODO Auto-generated method stub
 		image = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		update();
@@ -28,17 +28,19 @@ public class Screen {
 		Graphics2D g = image.createGraphics();
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.black);
-		g.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		g.drawString("Hello!", 40, 80);
-		g.drawOval(0, 40, 120, 80);
-		g.drawRect(20, 120, 80, 110);
-		g.drawLine(100, 120, 110, 200);
-		
-		g.setColor(Color.green);
-		for(int i = 0; i< image.getWidth(); i+=2){
-			g.drawLine(i, 230, i, 238);
-		}
+//		g.setFont(new Font("Helvetica", Font.PLAIN, 20));
+//		g.drawString("Hello!", 40, 80);
+//		g.drawOval(0, 40, 120, 80);
+//		g.drawRect(20, 120, 80, 110);
+//		g.drawLine(100, 120, 110, 200);
+//		
+//		g.setColor(Color.green);
+//		for(int i = 0; i< image.getWidth(); i+=2){
+//			g.drawLine(i, 230, i, 238);
+//		}
 	}
+	
+	//method for creating and setting the starting screen
 	public BufferedImage GetImage(){
 		return image;
 	}

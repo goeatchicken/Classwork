@@ -4,14 +4,14 @@ import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
-public class GUIApplication extends JFrame {
+public abstract class GUIApplication extends JFrame {
 	
 	private Screen currentScreen;
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new GUIApplication();
-	}
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		new GUIApplication();
+//	}
 	
 	public GUIApplication(){
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,13 +26,18 @@ public class GUIApplication extends JFrame {
 		setVisible(true);
 	}
 
-	protected void initScreen() {
-		// TODO Auto-generated method stub
-		Screen startScreen = new Screen(getWidth(), getHeight());
-		currentScreen = startScreen;
-	}
+	protected abstract void initScreen();
+	
+//	protected void initScreen() {
+//		// TODO Auto-generated method stub
+//		Screen startScreen = new Screen(getWidth(), getHeight());
+//		currentScreen = startScreen;
+//	}
 	
 	public void paint(Graphics g){
 		g.drawImage(currentScreen.GetImage(), 0, 0, null);
+	}
+	public void setScreen(Screen screen){
+		currentScreen = screen;
 	}
 }
