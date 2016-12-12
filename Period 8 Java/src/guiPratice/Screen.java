@@ -20,8 +20,8 @@ public abstract class Screen {
 		viewObject = new ArrayList<Visible>();
 		this.width = width;
 		this.height = height;
-		initImage();
 		initObject(viewObject);
+		initImage();
 	}
 	public abstract void initObject(ArrayList<Visible> viewObject);
 	
