@@ -2,14 +2,19 @@ package guiPratice.sampleGames;
 
 import guiPratice.GUIApplication;
 
+
 public class MouseFollower extends GUIApplication {
 
 	private CoordinateScreen coordScreen;
 	
+	public static void main(String[] args){
+		new MouseFollower();
+	}
+	
 	@Override
 	protected void initScreen() {
-		// TODO Auto-generated method stub
-		coordScreen = new CoordinateScreen(getWidth(), getHeight());
+		coordScreen = new CoordinateScreen(getWidth(),
+				getHeight());
 		setScreen(coordScreen);
 	}
 
