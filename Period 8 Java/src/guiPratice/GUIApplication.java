@@ -1,17 +1,13 @@
 package guiPratice;
 
 import java.awt.Graphics;
-
 import javax.swing.JFrame;
 
 public abstract class GUIApplication extends JFrame implements Runnable{
 
 	private Screen currentScreen;
 
-	
-	
-	
-	
+
 	public GUIApplication() {
 		//terminate program when window is closed
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
