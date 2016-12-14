@@ -10,13 +10,17 @@ public class TextLabel extends Component {
 	//FIELDS
 		private String text;
 		private String font;
+		private Color color;
+		private Action action;
 		private int size;
 
-		public TextLabel(int x, int y, int w, int h, String text) {
+		public TextLabel(int x, int y, int w, int h, String text, Color color, Action action) {
 			super(x, y, w, h);
 			this.text = text;
 			font = "Helvetica";
 			size = 20;
+			this.color = color;
+			this.action = action;
 			update();
 		}
 
@@ -47,6 +51,7 @@ public class TextLabel extends Component {
 			return size;
 		}
 
+	
 		@Override
 		public void update(Graphics2D g) {
 			g = clear();

@@ -35,9 +35,9 @@ public abstract class GUIApplication extends JFrame implements Runnable{
 			if(currentScreen.getMouseListener() != null){
 				removeMouseListener(currentScreen.getMouseListener());
 			}
-		}
-		if(currentScreen.getMouseMotionListener() != null){
-			removeMouseMotionListener(currentScreen.getMouseMotionListener());
+			if(currentScreen.getMouseMotionListener() != null){
+				removeMouseMotionListener(currentScreen.getMouseMotionListener());
+			}
 		}
 		currentScreen = screen;
 		//add controls for new screen
