@@ -1,10 +1,13 @@
 package guiPratice.sampleGames;
 
+import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
 import guiPratice.Screen;
+import guiPratice.components.Action;
+import guiPratice.components.Button;
 import guiPratice.components.TextArea;
 import guiPratice.components.TextLabel;
 import guiPratice.components.Visible;
@@ -13,6 +16,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 	
 	private TextLabel label;
 	private TextArea paragraph;
+	private Button button;
 	
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
@@ -27,7 +31,13 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 				+ " of the page, a new line is created.", null, null);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
-		
+		button = new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
+			public void Act() {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		viewObjects.add(button);
 	}
 
 	public void mouseDragged(MouseEvent m) {
