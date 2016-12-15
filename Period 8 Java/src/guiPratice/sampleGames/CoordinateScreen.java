@@ -31,7 +31,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 				+ " of the page, a new line is created.", null, null);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
-		button = new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
+		button = new Button(40,200,80,30,"The  Button",new Color(0,76,153), new Action(){
 			public void Act() {
 				// TODO Auto-generated method stub
 				
