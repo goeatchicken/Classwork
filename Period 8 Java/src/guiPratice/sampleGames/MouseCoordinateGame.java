@@ -9,6 +9,8 @@ import java.awt.event.MouseListener;
 public class MouseCoordinateGame extends GUIApplication implements Clickable{
 
 	public static MouseCoordinateGame game;
+	public static CoordinateScreen coordScreen;
+	public static MovementScreen moveScreen;
 
 	public MouseCoordinateGame(int i, int j) {
 		// TODO Auto-generated constructor stub
