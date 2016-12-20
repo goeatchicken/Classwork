@@ -2,7 +2,6 @@ package guiPratice.sampleGames;
 
 import guiPratice.GUIApplication;
 
-
 public class MouseFollower extends GUIApplication {
 
 	public static CoordinateScreen coordScreen;
