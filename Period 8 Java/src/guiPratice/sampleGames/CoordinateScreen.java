@@ -2,6 +2,7 @@ package guiPratice.sampleGames;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
@@ -13,7 +14,7 @@ import guiPratice.components.TextArea;
 import guiPratice.components.TextLabel;
 import guiPratice.components.Visible;
 
-public class CoordinateScreen extends Screen implements MouseMotionListener{
+public class CoordinateScreen extends Screen implements MouseMotionListener, MouseListener{
 
 	private TextLabel label;
 	private TextArea paragraph;
@@ -26,20 +27,20 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		label = new TextLabel(40,45,760,40,"Sample Text");
+		label = new TextLabel(40,45,760,40,"Sample Text",null,null);
 		paragraph = new TextArea(40,85,550,500,
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
-				+ " of the page, a new line is created.");
+				+ " of the page, a new line is created.", null, null);
 		button = new Button(40,200,80,40,"The Button with really long name",
 				new Color(100,100,250),new Action() {
 
 			public void Act() {
 				// TODO Auto-generated method stub
-				
+				MouseFollower.game.setScreen(MouseFollower.moveScreen);
 			}
 		});
-		picture = new Graphic(50, 50, .5,"resources/sampleImages/theButton.jpg");
+		picture = new Graphic(150, 200, .5,"resources/sampleImages/theButton.jpg");
 		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
@@ -59,4 +60,32 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 		return this;
 	}
 
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+	public MouseListener getMouseListener(){
+		// TODO Auto-generated method stub
+		return this;
+	}
 }
