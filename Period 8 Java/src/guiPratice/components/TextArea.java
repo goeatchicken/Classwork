@@ -9,7 +9,7 @@ import java.awt.RenderingHints;
 public class TextArea extends TextLabel {
 
 	public TextArea(int x, int y, int w, int h, String text, Color color, Action action) {
-		super(x, y, w, h, text, null, null);
+		super(x, y, w, h, text);
 	}
 
 	public void update(Graphics2D g){

@@ -6,6 +6,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+
 import guiPratice.Screen;
 import guiPratice.components.Action;
 import guiPratice.components.Button;
@@ -27,24 +28,24 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		label = new TextLabel(40,45,760,40,"Sample Text",null,null);
+		label = new TextLabel(40,45,760,40,"Sample Text");
 		paragraph = new TextArea(40,85,550,500,
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
 				+ " of the page, a new line is created.", null, null);
-		button = new Button(40,200,80,40,"The Button with really long name",
+		button = new Button(40,200,80,40,"The Button",
 				new Color(100,100,250),new Action() {
-
-			public void Act() {
-				// TODO Auto-generated method stub
-				MouseFollower.game.setScreen(MouseFollower.moveScreen);
+			
+			public void act() {
+				MouseFollower.game.
+				setScreen(MouseFollower.moveScreen);
 			}
 		});
-		picture = new Graphic(150, 200, .5,"resources/sampleImages/theButton.jpg");
-		viewObjects.add(picture);
+		picture = new Graphic(100,300,.5,"resources/sampleImages/theButton.jpg");
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
+		viewObjects.add(picture);
 	}
 
 	public void mouseDragged(MouseEvent arg0) {
@@ -53,16 +54,21 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 	}
 
 	public void mouseMoved(MouseEvent m) {
-		label.setText("Mouse at" + m.getX()+", "+m.getY());
+		label.setText("Mouse at " + m.getX()+", "+m.getY());
 	}
 	
 	public MouseMotionListener getMouseMotionListener(){
 		return this;
 	}
+	
+	public MouseListener getMouseListener(){
+		return this;
+	}
 
-	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+	public void mouseClicked(MouseEvent m) {
+		if(button.isHovered(m.getX(), m.getY())){
+			button.act();
+		}
 	}
 
 	public void mouseEntered(MouseEvent arg0) {
@@ -84,8 +90,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		// TODO Auto-generated method stub
 		
 	}
-	public MouseListener getMouseListener(){
-		// TODO Auto-generated method stub
-		return this;
-	}
+
 }
+
+

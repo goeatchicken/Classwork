@@ -12,7 +12,7 @@ public class Button extends TextLabel implements Clickable{
 	private Action action;
 	
 	public Button(int x, int y, int w, int h, String text, Color color, Action action) {
-		super(x, y, w, h, text, color, action);
+		super(x, y, w, h, text);
 		this.color = color;
 		this.action = action;
 		update();
@@ -52,11 +52,21 @@ public class Button extends TextLabel implements Clickable{
 
 
 	public boolean isHovered(int x, int y) {
-		return x>getX() && x<getX()+getWidth() && y > getY() && y<getY()+getHeight();
+		return x>getX() && x<getX()+getWidth() && 
+				y > getY() && y<getY()+getHeight();
 	}
 	
 	public void act(){
-		action.Act();
+		action.act();
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

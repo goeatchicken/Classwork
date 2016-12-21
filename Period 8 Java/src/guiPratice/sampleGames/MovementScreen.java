@@ -14,7 +14,7 @@ import guiPratice.components.Visible;
 
 public class MovementScreen extends Screen implements MouseMotionListener, MouseListener{
 
-	private Graphic mario;
+	private Graphic chicken;
 	private Button back;
 	
 	public MovementScreen(int width, int height) {
@@ -23,16 +23,16 @@ public class MovementScreen extends Screen implements MouseMotionListener, Mouse
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		mario = new Graphic(200,200,.25,"resources/sampleImages/chicken.jpg");
-		back = new Button(50,50,100,60,"Go Back", Color.GRAY, new Action() {
+		chicken = new Graphic(200,200,.25,"resources/sampleImages/chicken.jpg");
+		back = new Button(50,50,100,60,"Back", 
+				Color.GRAY, new Action() {
 			
-
-			public void Act() {
-				// TODO Auto-generated method stub
-				MouseFollower.game.setScreen(MouseFollower.coordScreen);
+			public void act() {
+				MouseFollower.game.
+				setScreen(MouseFollower.coordScreen);
 			}
 		});
-		viewObjects.add(mario);
+		viewObjects.add(chicken);
 		viewObjects.add(back);
 	}
 
