@@ -11,7 +11,8 @@ public class WhackAMole extends GUIApplication {
 	@Override
 	protected void initScreen() {
 		// TODO Auto-generated method stub
-
+		whackAMoleScreen wams = new whackAMoleScreen(getWidth(), getHeight());
+		setScreen(wams);
 	}
 
 	public static void main(String[] args) {

@@ -128,7 +128,7 @@ public abstract class Screen {
 		}
 	}
 
-	public void mousePressed(MouseEvent e) {
+	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		
 	}
