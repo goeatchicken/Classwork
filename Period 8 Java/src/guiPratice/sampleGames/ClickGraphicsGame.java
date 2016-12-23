@@ -13,11 +13,10 @@ public class ClickGraphicsGame extends GUIApplication {
 		app.start();
 	}
 	@Override
-	protected void initScreen() {
-		// TODO Auto-generated method stub
-		clickScreen gcs = new ClickGraphicScreen(getWidth(), getHeight());
+	public void initScreen() {
+		clickScreen = new ClickGraphicScreen(getWidth(), getHeight());
+		setScreen(clickScreen);
 		
-		setScreen(g);
 	}
 
 }

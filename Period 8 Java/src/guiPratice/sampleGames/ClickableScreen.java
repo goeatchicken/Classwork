@@ -48,7 +48,7 @@ public abstract class ClickableScreen extends Screen implements MouseListener {
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		initAllObjects(viewObjects);
 		clickables = new ArrayList<Clickable>();
-		for (int i = 0; i < viewObjects.size(); i ++){
+		for (int i = 0; i < viewObjects.size(); i++){
 			if (viewObjects.get(i) instanceof Clickable)clickables.add((Clickable) viewObjects.get(i));
 		}
 	}

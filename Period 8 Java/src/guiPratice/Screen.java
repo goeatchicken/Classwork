@@ -27,6 +27,9 @@ public abstract class Screen {
 		initObjects(viewObjects);
 		initImage();
 	}
+	public void addObject(Visible v){
+		viewObjects.add(v);
+	}
 
 	public abstract void 
 	     initObjects(ArrayList<Visible> viewObjects);
@@ -133,6 +136,12 @@ public abstract class Screen {
 		
 	}
 
+	public int getWidth(){
+		return width;
+	}
+	public int getHeight(){
+		return height;
+	}
 
 
 }
