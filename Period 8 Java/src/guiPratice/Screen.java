@@ -50,7 +50,8 @@ public abstract class Screen {
 		g.fillRect(0, 0, width, height);
 		g.setColor(Color.black);
 		//draw all visible components
-		for(Visible v: viewObjects){
+		for(int i = 0; i < viewObjects.size();i++){
+			Visible v = viewObjects.get(i);
 			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
 		}
 		//		g.setFont(new Font("Helvetica",Font.PLAIN,20));
@@ -108,6 +109,23 @@ public abstract class Screen {
 		 *   	i--;
 		 *   }
 		 * }
+		 * 
+		 * ALSO CORRECT:
+		 * * for(int i = 0; i < list.size(); i++)
+		 * 	while(i < list.size() && list.get(i) > 5) list.remove(i);
+		 * }
+		 * 
+		 * for this  reason, the following doesn'y even work!
+		 * 
+		 * for(Integer i: list){
+		 * 	if(i > 5)list.remove(i);
+		 * }
+		 * 
+		 * FINALLY, if you remove using an index, it 
+		 * returns the removed object, so you can do this:
+		 * System.out.println(list.remove(0).toString() +
+		 * 		" was removed.";
+		 * 
 		 **/
 		viewObjects.remove(v);
 		/**

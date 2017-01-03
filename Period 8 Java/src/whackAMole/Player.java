@@ -21,7 +21,7 @@ public class Player extends Component implements PlayerInterface{
 	public void update(Graphics2D g) {
 		// TODO Auto-generated method stub
 		g.setColor(Color.white);
-		g.fillRect(x, y, width, height);
+		g.fillRect(x, y, getWidth(), getHeight());
 		g.
 		g.
 		g.
