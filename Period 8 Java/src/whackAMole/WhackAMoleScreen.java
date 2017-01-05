@@ -45,7 +45,7 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 
 	private PlayerInterface getAPlayer() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Player(20,20);
 	}
 	/**
 	 * this is a placeholder because early in the game design
@@ -56,7 +56,8 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable{
 	 */
 	
 	private MoleInterface getAMole(){
-		return null;
+		return new Mole((int)(getWidth()*Math.random())-100,
+				(int)(getHeight()*Math.random()));
 	}
 
 	public void run() {

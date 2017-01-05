@@ -21,10 +21,10 @@ public class Player extends Component implements PlayerInterface{
 	public void update(Graphics2D g) {
 		// TODO Auto-generated method stub
 		g.setColor(Color.white);
-		g.fillRect(x, y, getWidth(), getHeight());
-		g.
-		g.
-		g.
+		g.fillRect(0, 0, getWidth(), getHeight());
+		g.setColor(Color.black);
+		g.drawOval(0, 0, 100, 100);
+		g.drawString(""+score, 45, 55);
 	}
 
 }
