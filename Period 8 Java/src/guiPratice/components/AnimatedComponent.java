@@ -3,7 +3,7 @@ package guiPratice.components;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class AnimatedComponent extends MovingComponent {
+public abstract class AnimatedComponent extends MovingComponent {
 	
 	private ArrayList<BufferedImage> frame; //the images that can be displayed
 	private ArrayList<Integer> times; //the time each image is displayed

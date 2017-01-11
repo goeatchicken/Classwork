@@ -3,7 +3,7 @@ package guiPratice.components;
 import java.awt.Color;
 import java.awt.Graphics2D;
 
-public class MovingComponent extends Component implements Runnable{
+public abstract class MovingComponent extends Component implements Runnable{
 	
 	private double vx;
 	private double vy;
@@ -42,13 +42,7 @@ public class MovingComponent extends Component implements Runnable{
 		}
 	}
 
-	public void checkBehaviors(int i) {
-		// TODO Auto-generated method stub
-		if(getY()>300){
-			setY(300);
-			vy*=-1;
-		}
-	}
+	public abstract void checkBehaviors(int i);
 
 	@Override
 	public void update(Graphics2D g) {
