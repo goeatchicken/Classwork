@@ -34,7 +34,7 @@ public abstract class MovingComponent extends Component implements Runnable{
 		while(running){
 			try{
 				Thread.sleep(REFRESH_RATE);
-				checkBehaviors(0);
+				checkBehaviors();
 				update();
 			}catch(InterruptedException e){
 				e.printStackTrace();
@@ -42,7 +42,7 @@ public abstract class MovingComponent extends Component implements Runnable{
 		}
 	}
 
-	public abstract void checkBehaviors(int i);
+	public abstract void checkBehaviors();
 
 	@Override
 	public void update(Graphics2D g) {
@@ -63,11 +63,7 @@ public abstract class MovingComponent extends Component implements Runnable{
 		}
 		drawImage(g);
 	}
-	private void drawImage(Graphics2D g) {
-		// TODO Auto-generated method stub
-		g.setColor(Color.BLACK);
-		g.fillOval(0, 0, getWidth(), getHeight());
-	}
+	public abstract void drawImage(Graphics2D g);
 
 	public double getVx() {
 		return vx;

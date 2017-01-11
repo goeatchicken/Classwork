@@ -1,5 +1,6 @@
 package guiPratice.components;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -31,5 +32,30 @@ public abstract class AnimatedComponent extends MovingComponent {
 	public void addFrame(BufferedImage img, Integer time){
 		frame.add(img);
 		times.add(time);
+	}
+	
+	public void checkBehaviors(){
+		// this would be where you add restrictions to he component's location
+	}
+	
+	public void drawImage(Graphics2D g){
+		long currentTime = System.currentTimeMillis();
+		//check if it's time to change the frame AND check there are images to be drawn
+		if(frame != null && frame.size() > 0 && frame.size() == times.size() && currentTime - displayTime > times.get(currentFrame)){
+			//updating is occurring so update the display time
+			displayTime = currentTime;
+			//increase currentFrame
+			currentFrame = (currentFrame+1)%frame.size();
+			if(currentFrame == 0 && !repeat){
+				setRunning(false);
+				return;
+			}
+			//clear the previous image
+			g = clear();
+			BufferedImage newFrame = frame.get(currentFrame);
+			//use the scaled image method to fit the image
+			g.drawImage(newFrame, 0, 0, getWidth(), getHeight(), 0, 0, newFrame.getWidth(), newFrame.getHeight(), null);
+			
+		}
 	}
 }

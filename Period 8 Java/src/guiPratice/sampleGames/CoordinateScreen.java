@@ -6,9 +6,11 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 
 import guiPratice.Screen;
 import guiPratice.components.Action;
+import guiPratice.components.AnimatedComponent;
 import guiPratice.components.Button;
 import guiPratice.components.Graphic;
 import guiPratice.components.MovingComponent;
@@ -51,10 +53,22 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		viewObjects.add(picture);
 		
 		
-		MovingComponent mc = new MovingComponent(30, 60,80,80);
-		mc.setVy(3);
-		mc.play();
-		viewObjects.add(mc);
+//		MovingComponent mc = new MovingComponent(30,60,80,80);
+//		mc.setVy(3);
+//		mc.play();
+//		viewObjects.add(mc);
+		
+		addAnimation(viewObjects);
+	}
+
+	private void addAnimation(ArrayList<Visible> viewObjects) {
+		// TODO Auto-generated method stub
+		AnimatedComponent a = new AnimatedComponent(40, 50, 150, 150);
+		try{
+			ImageIcon icon = new ImageIcon("resources/sampleImages/zanpto_sprite_sheet.png");
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 
 	public void mouseDragged(MouseEvent arg0) {
