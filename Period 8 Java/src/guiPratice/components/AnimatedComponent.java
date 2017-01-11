@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public abstract class AnimatedComponent extends MovingComponent {
+public class AnimatedComponent extends MovingComponent {
 	
 	private ArrayList<BufferedImage> frame; //the images that can be displayed
 	private ArrayList<Integer> times; //the time each image is displayed
@@ -12,8 +12,8 @@ public abstract class AnimatedComponent extends MovingComponent {
 	private int currentFrame; //the frame that is currently being displayed
 	private boolean repeat;
 
-	public AnimatedComponent(int x, int y, int w, int h) {
-		super(x, y, w, h);
+	public AnimatedComponent(int x, int y, int width, int height) {
+		super(x, y, width, height);
 		frame = new ArrayList<BufferedImage>();
 		times = new ArrayList<Integer>();
 		currentFrame = 0;
