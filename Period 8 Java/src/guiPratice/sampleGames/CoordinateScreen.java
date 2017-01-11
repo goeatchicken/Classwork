@@ -82,7 +82,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 				int y1 = topMargin + h*(1/numberInRow);
 				Graphics2D g = cropped.createGraphics();
 				g.drawImage(icon.getImage(), 0, 0, w, h, x1, y1, x1 + w, y1 + h, null);
-				a.addFrame(cropped, 500);
+				a.addFrame(cropped, 120);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
