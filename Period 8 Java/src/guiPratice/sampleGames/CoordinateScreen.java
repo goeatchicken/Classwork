@@ -68,9 +68,9 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		AnimatedComponent a = new AnimatedComponent(40, 40, 150, 150);
 		try{
 			int numberInRow = 7;
-			int rows = 5;
+			int rows = 4;
 			int w = 80;
-			int h = 80;
+			int h = 160;
 			ImageIcon icon = new ImageIcon("resources/sampleImages/zanpto_sprite_sheet.png");
 			//create a for loop that will take a "sub-length from the sprite grid
 			for(int i = 0; i < numberInRow*rows; i++){
