@@ -88,6 +88,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 			e.printStackTrace();
 		}
 		viewObjects.add(a);
+		a.setX(100);
 		a.play();
 	}
 

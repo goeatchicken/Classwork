@@ -38,7 +38,7 @@ public class Graphic implements Visible {
 		loadImages(imageLocation, w,h);
 	}
 	
-	private void loadImages(String imageLocation, int w, int h) {
+	public void loadImages(String imageLocation, int w, int h) {
 		try{
 			//get the image from file (FULL SIZE)
 			ImageIcon icon = new ImageIcon(imageLocation);
