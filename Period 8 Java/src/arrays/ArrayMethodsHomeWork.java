@@ -13,6 +13,12 @@ public class ArrayMethodsHomeWork {
 		int[] test6 = {1, 2, 3, 4, 5, 8};
 		double[] test9 = {1.0, 2.0, 3.0, 4.0};
 		double[] test4 = {6.0, 1.0, 3.0, 5.0, 2.0 , 62.0, 11.0, 34.0, 56.0, 22.0, 63.0, 1.0, 33.0, 556.0, 21.0};
+		int[][] g1 ={{9, 8, 7, 6},           
+	        	{5, 4, 12, 1},
+	   	        {3, 19, 2, 13}};
+		String[][] t = new String[2][3];	
+		String[] s={"hello", "blah",  "boom", "elephant"};
+		String[] s2={"blah", "hello",  "boom"};
 		//System.out.println(searchUnsorted(test, -1));
 		//System.out.println(searchSorted(test, 2));
 		//sortDescending(test);
@@ -20,9 +26,63 @@ public class ArrayMethodsHomeWork {
 		//System.out.println(Arrays.toString(getStats(test4)));
 		//System.out.println(countDifferences(test5, test));
 //		System.out.println(longestConsecutiveSequence(test6));
-		System.out.println(generateDistinctItemsList(7));
+//		System.out.println(generateDistinctItemsList(7));
+//		System.out.println(maxDistBetweenAny2(g1));
+//		System.out.println(Arrays.deepToString(twoCharsTo2D(t,s)));
+		System.out.println(bestAverage(s2, g1));
 	}
-	
+	  public static String bestAverage(String[] roster, int[][] grades){
+	        int num = 0;
+	        int y = 0;
+	        int[] avg = new int[roster.length];
+	        String highest = "Nobody";
+	        while(num<roster.length){
+	            int x= 0;
+	           for(int i = 0; i<grades[num].length; i++){
+	               x += grades[num][i];
+	           }
+	           avg[num] = x/grades[num].length;
+	           num++;
+	        }
+	        for(int i=0; i<roster.length; i++){
+	        	if(avg[y]<avg[0]){
+	        		y = i;
+	        	}
+	        }
+	        return roster[y];
+	    }
+	public static String[][] twoCharsTo2D(String[][] table, String[] words){
+		int wordCount = 0;
+		
+		for(int i = 0; i<table.length; i++){
+            for(int j = 0; j< table[0].length; j++){
+            	if(wordCount>=words.length){
+            		table[i][j]="$$";
+            	}
+            	else{
+            		table[i][j]=words[wordCount].substring(0, 3);
+            	}
+            	wordCount++;
+            }
+		}
+		return table;
+	}
+	public static int maxDistBetweenAny2(int[][] nums){
+        int lowest = nums[0][0];
+        int highest = nums[0][0];
+        
+        for(int i = 0; i<nums.length; i++){
+            for(int j = 0; j< nums[0].length; j++){
+               if(nums[i][j]<lowest){
+                   lowest = nums[i][j];
+               }
+                if(nums[i][j]>highest){
+                   highest = nums[i][j];
+                }
+            }
+        }
+        return highest - lowest;
+    }
 	public static int searchUnsorted(int[] arrayToSearch, int key){
         int k = 0;
         for(int i=0; i<arrayToSearch.length; i++){
