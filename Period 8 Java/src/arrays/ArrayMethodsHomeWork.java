@@ -19,6 +19,17 @@ public class ArrayMethodsHomeWork {
 		String[][] t = new String[2][3];	
 		String[] s={"hello", "blah",  "boom", "elephant"};
 		String[] s2={"blah", "hello",  "boom"};
+		int[][] g2 ={{9, 8, 7, 6},           
+					{5, 4, 12, 1},
+					{3, 19, 2, 13}};
+//								{{5, 12, 1},
+//      		  					{3, 2, 13}};
+		int[][] g3 ={{-3, 4, -8},           
+			            	{14, 2, 21},
+			   	       {3, 32, -3}};
+		 int[][] g4 ={{9, 8, 7, 6},           
+	   	         {5, 4, 2, 1},
+	   	         {3, 9, 2, 3}};
 		//System.out.println(searchUnsorted(test, -1));
 		//System.out.println(searchSorted(test, 2));
 		//sortDescending(test);
@@ -28,14 +39,139 @@ public class ArrayMethodsHomeWork {
 //		System.out.println(longestConsecutiveSequence(test6));
 //		System.out.println(generateDistinctItemsList(7));
 //		System.out.println(maxDistBetweenAny2(g1));
-//		System.out.println(Arrays.deepToString(twoCharsTo2D(t,s)));
-		System.out.println(bestAverage(s2, g1));
+//		System.out.println(Arrays.toString(twoCharsTo2D(t,s)));
+//		System.out.println(bestAverage(s2, g1));
+//		System.out.println(Arrays.toString(removeRowCol(g3, 1, 1)));
+		System.out.println(Arrays.toString(getNeighbors(g4, 2, 2)));
 	}
+	public static int[] getNeighbors(int[][] grid, int row, int col){
+		int[] nei1 = new int[3];
+        int[] nei2 = new int[5];
+        int[] nei3 = new int[8];
+        
+        //top row
+        if(row == 0){
+        	//2 corners
+        	if(col == 0){
+            	nei1[0]=grid[0][1];
+            	nei1[1]=grid[1][0];
+            	nei1[2]=grid[1][1];
+            	return nei1;
+        	}
+        	else if(col == grid[0].length-1){
+        		nei1[0]=grid[0][grid[0].length-2];
+            	nei1[1]=grid[1][grid[0].length-1];
+            	nei1[2]=grid[1][grid[0].length-2];
+            	return nei1;
+        	}
+        	//not corners
+        	else{
+        		nei2[0]=grid[0][col-1];
+        		nei2[1]=grid[0][col+1];
+        		nei2[2]=grid[1][col-1];
+        		nei2[3]=grid[1][col];
+        		nei2[4]=grid[1][col+1];
+        		return nei2;
+        	}
+        }       
+        //left col
+        else if(col == 0){
+        	//left bottom corner
+        	if(row == grid.length-1){
+        		nei1[0]=grid[grid.length-2][0];
+            	nei1[1]=grid[grid.length-2][1];
+            	nei1[2]=grid[grid.length-1][1];
+            	return nei1;
+        	}
+        	//not corners
+        	else{
+        		nei2[0]=grid[row-1][col];
+        		nei2[1]=grid[row-1][col+1];
+        		nei2[2]=grid[row][col+1];
+        		nei2[3]=grid[row+1][col];
+        		nei2[4]=grid[row+1][col+1];
+        		return nei2;
+        	}
+        }
+        //right col
+        else if(col == grid[0].length-1){
+        	//right bottom corner
+        	if(row == grid.length-1){
+        		nei1[0]=grid[grid.length-2][grid[0].length-2];
+        		nei1[1]=grid[grid.length-2][grid[0].length-1];
+        		nei1[2]=grid[grid.length-1][grid[0].length-2];
+        		return nei1;
+        	}
+        	//not corners
+        	else{
+        		nei2[0]=grid[row-1][col-1];
+        		nei2[1]=grid[row-1][col];
+        		nei2[2]=grid[row][col-1];
+        		nei2[3]=grid[row+1][col-1];
+        		nei2[4]=grid[row+1][col];
+        		return nei2;
+        	}
+        }
+        //bottom row
+        else if(row == grid.length-1){
+        	//not corners
+        	nei2[0]=grid[row-1][col-1];
+    		nei2[1]=grid[row-1][col];
+    		nei2[2]=grid[row-1][col+1];
+    		nei2[3]=grid[row][col-1];
+    		nei2[4]=grid[row][col+1];
+    		return nei2;
+        }
+        //flower
+        else{
+        	nei3[0] = grid[row-1][col-1];
+        	nei3[1] = grid[row-1][col];
+        	nei3[2] = grid[row-1][col+1];
+        	nei3[3] = grid[row][col-1];
+        	nei3[4] = grid[row][col+1];
+        	nei3[5] = grid[row+1][col-1];
+        	nei3[6] = grid[row+1][col];
+        	nei3[7] = grid[row+1][col+1];
+        	return nei3;
+        }
+    }
+	public static int[][] removeRowCol(int[][] mat, int row, int col){
+		int[] newMat1 = new int[(mat.length-1) * (mat[0].length-1)];
+        int[][] newMat2 = new int[mat.length-1][mat[0].length-1];
+        int x = 0;
+        int y = 0;
+        int z = 0;
+        for(int i=0; i < mat.length; i++){
+        	for(int j=0; j < mat[0].length; j++){
+        		if(i == row){
+
+        		}
+        		else if(j == col){
+
+        		}
+        		else{
+        			newMat1[x] = mat[i][j];
+        			x++;
+        		}
+        	}
+        }
+        for(int i = 0; i<newMat1.length; i++){
+        	if(i%newMat2[0].length ==0 && i!=0){
+        		newMat2[z+1][0] = newMat1[i];
+        		z++;
+        		y=1;
+        	}
+        	else{
+        		newMat2[z][y] = newMat1[i];
+        		y++;
+        	}
+        }
+        return newMat2;
+    }
 	  public static String bestAverage(String[] roster, int[][] grades){
 	        int num = 0;
 	        int y = 0;
 	        int[] avg = new int[roster.length];
-	        String highest = "Nobody";
 	        while(num<roster.length){
 	            int x= 0;
 	           for(int i = 0; i<grades[num].length; i++){
@@ -44,8 +180,9 @@ public class ArrayMethodsHomeWork {
 	           avg[num] = x/grades[num].length;
 	           num++;
 	        }
-	        for(int i=0; i<roster.length; i++){
-	        	if(avg[y]<avg[0]){
+	        System.out.println(Arrays.toString(avg));
+	        for(int i = 0; i<avg.length;i++){
+	        	if(avg[i]>avg[y]){
 	        		y = i;
 	        	}
 	        }
