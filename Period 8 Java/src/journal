@@ -10,4 +10,10 @@ May 6, 2017
 	
 May 8, 2017 
 	Today I created a clickable graphic starting screen and linked it to the character screen.
-	Goals: Change starting screen into the character creation screen. Start on what character the player wants.
+	Goals: Change starting screen into the character creation screen. Start on what character the 
+	player wants.
+	
+May 9, 2017
+	Today I debugged the starting screen and added keylistener into the gui. Also, I made interfaces player 
+	into the package.
+	Goals: Complete the Player interface. Assist the enemy interface. Begin sprite drawing.
