@@ -17,3 +17,7 @@ May 9, 2017
 	Today I debugged the starting screen and added keylistener into the gui. Also, I made interfaces player 
 	into the package.
 	Goals: Complete the Player interface. Assist the enemy interface. Begin sprite drawing.
+	
+May 10, 2017
+	Today I continued completing the Player interface and decided the stats of the player.
+	Goals: Complete the Player interface. Assist the enemy interface. Begin sprite drawing.
