@@ -21,3 +21,8 @@ May 9, 2017
 May 10, 2017
 	Today I continued completing the Player interface and decided the stats of the player.
 	Goals: Complete the Player interface. Assist the enemy interface. Begin sprite drawing.
+	
+May 11, 2017
+	Today I worked with Hao to create the stats of the character and the level up system. We also created a default 
+	move for the play to use. We attempted to work on the Enemy's moves and battle system.
+	Goals: Assist Enemy interface. Begin sprite drawing. Plan out character customizing screen.
