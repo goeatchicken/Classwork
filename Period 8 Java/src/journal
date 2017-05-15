@@ -32,3 +32,8 @@ May 12, 2017
 	game. 
 	Goals: Assist Enemy interface. Begin sprite drawing. Plan out character customizing screen.
 	Homework: Draw the map of stage 4.
+	
+May 15, 2017
+	Today I worked with Hao to finish the monster class. Although it doesn't have many moves, we are slowing 
+	building it. Also, be begun the battle class, where the player and monster battle.
+	Goals: Finish battle class. Begin sprite drawing. Finish battle concepts.
