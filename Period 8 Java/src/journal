@@ -41,3 +41,13 @@ May 15, 2017
 May 16, 2017
 	Today I worked on making sprite sheets for the background. I am using the sample sprite sheet as a reference.
 	Goals: Design the characters. Finish battle class.
+	
+May 17, 2017
+	Today I worked with Hao in the the Battle class. We had to debug it. We are going to take the direction of the attack and
+	the damage done in account. 
+	Goals: Correctly fix the Battle class. Draw character sprites.
+	
+May 22, 2017
+	Today I worked with Hao and changed the Battle class. We are going to turn the current battle into a turned
+	based battle using the "wait" instead of "sleep"
+	Goals: Do the Battle class. Debuggg the Battle class.
