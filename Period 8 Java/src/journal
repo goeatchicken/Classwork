@@ -51,3 +51,8 @@ May 22, 2017
 	Today I worked with Hao and changed the Battle class. We are going to turn the current battle into a turned
 	based battle using the "wait" instead of "sleep"
 	Goals: Do the Battle class. Debuggg the Battle class.
+	
+May 23, 2017
+	Today I worked with Hao and added a turn based battle to the game. We want to add multiple monsters and direction of attack.
+	We also want to make the hud menu to pop up and disappear when "enter" is pressed.
+	Goals: Code the Character Class so it can be merged with Joey's classes.
