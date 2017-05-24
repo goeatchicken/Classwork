@@ -56,3 +56,9 @@ May 23, 2017
 	Today I worked with Hao and added a turn based battle to the game. We want to add multiple monsters and direction of attack.
 	We also want to make the hud menu to pop up and disappear when "enter" is pressed.
 	Goals: Code the Character Class so it can be merged with Joey's classes.
+	
+May 24, 2017
+	Today Hao and I worked on the CreateYourOwnCharacterAndWeaponScreen. We made it so the player can choose the 
+	gender. Later, we will allow the player to create a name. We are deciding if we need to make that a new 
+	screen or not.
+	Goals: Continue the Character Class.
