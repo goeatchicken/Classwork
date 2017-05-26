@@ -67,3 +67,9 @@ May 25, 2017
 	Today Hao and I worked on the Name creation page. We made is so the player can type their name on the screen and 
 	updates. We also inputted a new GUI.
 	Goals: Finaish the Character Class. Add the previous additions to the NEW GUI.
+	
+May 26, 2017
+	Today I finished the Name creation page and forced the player to enter a name between 3-12 character,
+	or else it will force clear it. I created the next screen, "Jobs", so the player can pick their stats. I also
+	put back the cursor picture.
+	Goals: Finish the Job Class. Make some animated screens
